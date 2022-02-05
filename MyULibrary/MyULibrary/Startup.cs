@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyULibrary.BAL.Data;
+using MyULibrary.BAL.Declarations;
+using MyULibrary.BAL.Implementations;
 using MyULibrary.DAL.Models;
 using System;
 using System.Collections.Generic;
@@ -36,6 +38,7 @@ namespace MyULibrary
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
 
+            services.AddScoped<IBooksRepository, BooksRepository>();
             
         }
 
