@@ -8975,9 +8975,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jacob\\OneDrive\\Documents\\MyULibrary\\MyULibrary\\MyULibrary\\MyULibrary.csproj",
-      "projectName": "MyULibrary",
-      "projectPath": "C:\\Users\\jacob\\OneDrive\\Documents\\MyULibrary\\MyULibrary\\MyULibrary\\MyULibrary.csproj",
+      "projectUniqueName": "C:\\Users\\jacob\\OneDrive\\Documents\\MyULibrary\\MyULibrary\\MyULibrary\\MyULibrary.API.csproj",
+      "projectName": "MyULibrary.API",
+      "projectPath": "C:\\Users\\jacob\\OneDrive\\Documents\\MyULibrary\\MyULibrary\\MyULibrary\\MyULibrary.API.csproj",
       "packagesPath": "C:\\Users\\jacob\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\jacob\\OneDrive\\Documents\\MyULibrary\\MyULibrary\\MyULibrary\\obj\\",
       "projectStyle": "PackageReference",

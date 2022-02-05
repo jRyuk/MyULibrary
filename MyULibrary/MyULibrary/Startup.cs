@@ -32,12 +32,15 @@ namespace MyULibrary
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,UserManager<User> userManager,RoleManager<IdentityRole> roleManager)
         {
             if (env.IsDevelopment())
             {
@@ -59,6 +62,7 @@ namespace MyULibrary
             app.UseAuthentication();
             app.UseAuthorization();
 
+            DBInitializer.SeedData(userManager, roleManager);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
