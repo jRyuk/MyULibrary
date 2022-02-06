@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -9,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using MyULibrary.BAL.Data;
 using MyULibrary.BAL.Declarations;
 using MyULibrary.DAL.Models;
+using MyULibrary.DAL.ViewModels;
 
 namespace MyULibrary.API.Controllers
 {
@@ -106,6 +108,15 @@ namespace MyULibrary.API.Controllers
         {
             var book = await _booksRepository.GetByID(id);
             return book != null;
+        }
+
+        [HttpPost("requestbook")]
+        public async Task<ActionResult> RequestBook(BookRequestViewModel books)
+        {
+            var userinfo = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            books.Email = userinfo;
+            var result = await _booksRepository.RequestBook(books);
+            return Ok(result);
         }
     }
 }

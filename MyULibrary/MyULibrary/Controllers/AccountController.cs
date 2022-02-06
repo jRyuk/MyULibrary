@@ -45,6 +45,8 @@ namespace MyULibrary.API.Controllers
         [HttpPost("authenticate")]
         public async Task<IActionResult> Authenticate(AuthenticateRequest model)
         {
+            
+
             var response = await _userService.Authenticate(model);
 
             if (response == null)

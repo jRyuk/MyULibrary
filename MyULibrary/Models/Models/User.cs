@@ -10,7 +10,7 @@ namespace MyULibrary.DAL.Models
     {
         public User()
         {
-            BookRequests = new HashSet<BookRequest>();
+            BookRequest = new HashSet<BookRequest>();
         }
 
         public string FirstName { get; set; }
@@ -21,6 +21,6 @@ namespace MyULibrary.DAL.Models
         [NotMapped]
         public string Role { get; set; }
 
-        public HashSet<BookRequest> BookRequests { get; set; }
+        public HashSet<BookRequest> BookRequest { get; set; }
     }
 }

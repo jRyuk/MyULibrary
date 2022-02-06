@@ -9,7 +9,7 @@
         </div>
         <div class="card-footer">
           <span class="card-text">Quantity: {{book.quantity}}</span>&nbsp;
-          <button  type="submit" class="btn btn-primary">Reserve</button>
+          <button (click)="Book(book.id)"   type="submit" class="btn btn-primary">Reserve</button>
         </div>
       </div>
 </div>

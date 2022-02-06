@@ -90,6 +90,7 @@ namespace MyULibrary.BAL.Declarations
         {
             dbSet.Attach(entityToUpdate);
             context.Entry(entityToUpdate).State = EntityState.Modified;
+            await context.SaveChangesAsync();
         }
     }
 }

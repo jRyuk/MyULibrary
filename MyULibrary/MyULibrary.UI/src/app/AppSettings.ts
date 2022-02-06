@@ -3,4 +3,5 @@ export class AppSettings {
    public static getBooks = "books/";
    public static user = "account/"
    public static login = "account/authenticate"
+   public static requestbook = "books/requestbook";
 }

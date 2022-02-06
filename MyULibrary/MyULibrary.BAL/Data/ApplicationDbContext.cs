@@ -16,5 +16,6 @@ namespace MyULibrary.BAL.Data
         }
 
         public DbSet<Books> Books { get; set; }
+        public DbSet<BookRequest> BookRequest { get; set; }
     }
 }

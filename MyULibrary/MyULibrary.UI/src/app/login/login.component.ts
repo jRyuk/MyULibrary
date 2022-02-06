@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
         {
           ;
           localStorage.setItem ('token', data.token);
+          localStorage.setItem ('email', data.email);
           this.route.navigate(['/books']); 
         }
       });
