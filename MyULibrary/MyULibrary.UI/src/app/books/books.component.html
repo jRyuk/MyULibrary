@@ -1,4 +1,12 @@
 <div>
+    <div >
+      <p>
+        <a routerLink="/mybooks">My requested books!</a> | 
+        <a routerLink="/bookrequested">View books requested</a> |
+        <a routerLink="/users">Users</a>
+      </p>
+
+    </div>
     <div *ngFor="let book of books" class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">{{book.title}}</h5>

@@ -118,5 +118,13 @@ namespace MyULibrary.API.Controllers
             var result = await _booksRepository.RequestBook(books);
             return Ok(result);
         }
+
+        // GET: api/Books
+        [HttpGet("mybooks")]
+        public async Task<ActionResult<IEnumerable<Books>>> MyBooks()
+        {
+            var userinfo = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return Ok(await _booksRepository.GetMyBooks(userinfo));
+        }
     }
 }

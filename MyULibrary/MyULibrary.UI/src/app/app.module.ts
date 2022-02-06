@@ -9,6 +9,8 @@ import { CreateBooksComponent } from './create-books/create-books.component';
 import {FormsModule} from '@angular/forms';
 import { CreateusersComponent } from './createusers/createusers.component';
 import { LoginComponent } from './login/login.component';
+import { MyBooksComponent } from './my-books/my-books.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
@@ -20,14 +22,22 @@ const routes: Routes = [
     component : BooksComponent
   },
   {
-    path : 'users', 
+    path : 'createusers', 
     component : CreateusersComponent
+  },
+  {
+    path : 'users', 
+    component : UsersComponent
+  },
+  {
+    path : "mybooks",
+    component : MyBooksComponent
   }
 ];
 
 @NgModule({
   imports:      [ BrowserModule, RouterModule.forRoot(routes),HttpClientModule,FormsModule ],
-  declarations: [ CreateusersComponent, AppComponent, CreateBooksComponent, BooksComponent, CreateusersComponent, LoginComponent ],
+  declarations: [ CreateusersComponent, AppComponent, CreateBooksComponent, BooksComponent, CreateusersComponent, LoginComponent, MyBooksComponent, UsersComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

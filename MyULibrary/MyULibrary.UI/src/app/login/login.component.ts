@@ -11,7 +11,9 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(private http:HttpClient, private route:Router) {
-
+      if(localStorage.getItem("token") != null && localStorage.getItem("token") != "" ){
+        route.navigate(['/books'])
+      }
      
    }
 
@@ -26,7 +28,7 @@ export class LoginComponent implements OnInit {
           ;
           localStorage.setItem ('token', data.token);
           localStorage.setItem ('email', data.email);
-          this.route.navigate(['/books']); 
+          window.location.reload();
         }
       });
   }

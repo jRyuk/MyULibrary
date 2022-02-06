@@ -16,15 +16,15 @@ namespace MyULibrary.BAL.Data
 
         public static void SeedUsers(UserManager<User> userManager)
         {
-            if (userManager.FindByNameAsync("student1@localhost").Result == null)
+            if (userManager.FindByEmailAsync("student1@localhost.com").Result == null)
             {
                 var user = new User();
-                user.UserName = "student1@localhost";
-                user.Email = "student1@localhost";
+                user.UserName = "student1@localhost.com";
+                user.Email = "student1@localhost.com";
                 user.FirstName = "Nancy";
                 user.LastName = "Davolio";
 
-                IdentityResult result = userManager.CreateAsync(user, "student123!").Result;
+                IdentityResult result = userManager.CreateAsync(user, "User123!").Result;
 
                 if (result.Succeeded)
                 {
@@ -33,15 +33,15 @@ namespace MyULibrary.BAL.Data
             }
 
 
-            if (userManager.FindByNameAsync("librarian1@localhost").Result == null)
+            if (userManager.FindByEmailAsync("librarian1@localhost.com").Result == null)
             {
                 var user = new User();
-                user.UserName = "librarian1@localhost";
-                user.Email = "librarian1@localhost";
+                user.UserName = "librarian1@localhost.com";
+                user.Email = "librarian1@localhost.com";
                 user.FirstName = "Mark";
                 user.LastName = "Smith";
 
-                IdentityResult result = userManager.CreateAsync(user, "Librarian123!").Result;
+                IdentityResult result = userManager.CreateAsync(user, "User123!").Result;
 
                 if (result.Succeeded)
                 {

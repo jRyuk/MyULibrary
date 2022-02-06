@@ -12,6 +12,11 @@ export class AppComponent {
   title = 'My U Library';
   showLogin = true;
   UserLogged = localStorage.getItem("email");
+
+  Logout(){
+    localStorage.clear();
+    window.location.reload();
+  }
 }
 
 

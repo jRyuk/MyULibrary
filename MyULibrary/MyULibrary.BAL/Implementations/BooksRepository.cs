@@ -1,4 +1,5 @@
-﻿using MyULibrary.BAL.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using MyULibrary.BAL.Data;
 using MyULibrary.BAL.Declarations;
 using MyULibrary.DAL.Models;
 using MyULibrary.DAL.ViewModels;
@@ -15,6 +16,15 @@ namespace MyULibrary.BAL.Implementations
         public BooksRepository(ApplicationDbContext applicationDbContext):base(applicationDbContext)
         {
 
+        }
+
+        public async Task<IQueryable<Books>> GetMyBooks(string userId)
+        {
+
+            var mybooks = context.BookRequest.Include(c => c.User)
+            .Include(c => c.Book).Where(c => c.User.Email == userId);
+
+            return mybooks.Select(c => c.Book);
         }
 
         public async Task<Books> RequestBook(BookRequestViewModel books)
