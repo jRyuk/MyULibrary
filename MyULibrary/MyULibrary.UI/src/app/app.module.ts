@@ -8,6 +8,7 @@ import { BooksComponent } from './books/books.component';
 import { CreateBooksComponent } from './create-books/create-books.component';
 import {FormsModule} from '@angular/forms';
 import { CreateusersComponent } from './createusers/createusers.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,7 @@ const routes: Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, RouterModule.forRoot(routes),HttpClientModule,FormsModule ],
-  declarations: [ CreateusersComponent, AppComponent, CreateBooksComponent, BooksComponent, CreateusersComponent ],
+  declarations: [ CreateusersComponent, AppComponent, CreateBooksComponent, BooksComponent, CreateusersComponent, LoginComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { AppSettings } from '../AppSettings';
 import * as moment from 'moment';
 
@@ -16,7 +16,12 @@ export class BooksComponent implements OnInit {
 
   ngOnInit(): void 
   {
-    this.http.get(`${AppSettings.API_ENDPOINT}/${AppSettings.getBooks}`).subscribe(result=> {
+    const head = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem("token")}`
+    })
+
+    this.http.get(`${AppSettings.API_ENDPOINT}/${AppSettings.getBooks}`,{headers:head}).subscribe(result=> {
       this.books = result;
     });
   }

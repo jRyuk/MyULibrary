@@ -7,3 +7,4 @@ C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Shared\obj\Debug\netcore
 C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Shared\obj\Debug\netcoreapp3.1\MyULibrary.Shared.csproj.CoreCompileInputs.cache
 C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Shared\obj\Debug\netcoreapp3.1\MyULibrary.Shared.dll
 C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Shared\obj\Debug\netcoreapp3.1\MyULibrary.Shared.pdb
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Shared\obj\Debug\netcoreapp3.1\MyULibrary.Shared.csproj.AssemblyReference.cache

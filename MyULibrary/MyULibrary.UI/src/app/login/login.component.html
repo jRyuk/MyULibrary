@@ -1,0 +1,13 @@
+<div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input [(ngModel)]="user.UserName" type="text" class="form-control" placeholder="Email">
+       
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input [(ngModel)] = "user.Password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <br/>
+      <button (click)="Login()" type="submit" class="btn btn-primary">Login</button>
+</div>

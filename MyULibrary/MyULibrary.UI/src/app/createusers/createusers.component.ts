@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AppSettings } from '../AppSettings';
 
 @Component({
   selector: 'app-createusers',
@@ -7,12 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateusersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
   }
 
-  user = {
+  user =
+   {
     FirstName : "",
     LastName : "",
     Email : "",
@@ -21,8 +24,12 @@ export class CreateusersComponent implements OnInit {
     Role : "",
   }
 
-  Guardar(){
-    
+  Guardar()
+  {
+    this.http.post<any>(`${AppSettings.API_ENDPOINT}/${AppSettings.user}`,this.user).subscribe(data =>
+      {
+       
+      });
   }
 
 }

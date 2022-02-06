@@ -207,3 +207,7 @@ C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary\obj\Debug\net
 C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary\obj\Debug\netcoreapp3.1\MyULibrary.API.dll
 C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary\obj\Debug\netcoreapp3.1\MyULibrary.API.pdb
 C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary\obj\Debug\netcoreapp3.1\MyULibrary.API.genruntimeconfig.cache
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

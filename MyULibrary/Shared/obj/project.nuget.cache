@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "xEwpx3BcBeJPrswNlDf/6GseFLP4FhhAUbW5zDwzP/cF0y+onZ2bREL4HL5Mp8q9WaJZ9lRVyYdTicTOLqzWFg==",
+  "dgSpecHash": "AKwlQxt4xMopYB9Jfrw2hZkgXEOXXOqiKXrAuUV/yKyAD9+1+71VmdxSzDn/S5cD12kPt5YVKmp+JMu1XSVa5w==",
   "success": true,
   "projectFilePath": "C:\\Users\\jacob\\OneDrive\\Documents\\MyULibrary\\MyULibrary\\Shared\\MyULibrary.Shared.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jacob\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.22\\microsoft.aspnetcore.jsonpatch.3.1.22.nupkg.sha512",
+    "C:\\Users\\jacob\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.22\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.22.nupkg.sha512",
+    "C:\\Users\\jacob\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\jacob\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\jacob\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

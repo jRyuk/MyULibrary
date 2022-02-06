@@ -154,6 +154,28 @@ namespace MyULibrary.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("MyULibrary.DAL.Models.BookRequest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("BookRequest");
+                });
+
             modelBuilder.Entity("MyULibrary.DAL.Models.Books", b =>
                 {
                     b.Property<int>("Id")
@@ -301,6 +323,19 @@ namespace MyULibrary.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("MyULibrary.DAL.Models.BookRequest", b =>
+                {
+                    b.HasOne("MyULibrary.DAL.Models.Books", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MyULibrary.DAL.Models.User", "User")
+                        .WithMany("BookRequests")
+                        .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618
         }
