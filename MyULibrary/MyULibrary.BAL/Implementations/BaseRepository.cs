@@ -67,7 +67,8 @@ namespace MyULibrary.BAL.Declarations
 
         public async virtual Task Insert(TEntity entity)
         {
-           await dbSet.AddAsync(entity);
+            await dbSet.AddAsync(entity);
+            await context.SaveChangesAsync();
         }
 
         public virtual void Delete(object id)
@@ -76,7 +77,7 @@ namespace MyULibrary.BAL.Declarations
             Delete(entityToDelete);
         }
 
-        public virtual void Delete(TEntity entityToDelete)
+        public async Task  Delete(TEntity entityToDelete)
         {
             if (context.Entry(entityToDelete).State == EntityState.Detached)
             {

@@ -20,6 +20,7 @@ namespace MyULibrary
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -39,7 +40,17 @@ namespace MyULibrary
             services.AddRazorPages();
 
             services.AddScoped<IBooksRepository, BooksRepository>();
-            
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:4200/");
+                                  });
+            });
+
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +68,12 @@ namespace MyULibrary
                 app.UseHsts();
             }
 
+            app.UseCors(x => x
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -64,11 +81,13 @@ namespace MyULibrary
 
             app.UseAuthentication();
             app.UseAuthorization();
+          
 
             DBInitializer.SeedData(userManager, roleManager);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }

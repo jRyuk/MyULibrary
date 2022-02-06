@@ -11,5 +11,15 @@ namespace MyULibrary.DAL.Models
         public string Author { get; set; }
         public DateTime Published { get; set; }
         public string Genre { get; set; }
+
+        public string ShowPublished
+        {
+            get
+            {
+                return Published.ToShortDateString();
+            }
+        }
+
+        public int Quantity { get; set; }
     }
 }

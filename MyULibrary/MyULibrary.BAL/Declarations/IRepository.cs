@@ -9,7 +9,7 @@ namespace MyULibrary.BAL.Declarations
 {
     public interface IRepository<TEntity> where TEntity : class
     {
-        void Delete(TEntity entityToDelete);
+        Task Delete(TEntity entityToDelete);
         void Delete(object id);
         Task<IEnumerable<TEntity>> Get(
             Expression<Func<TEntity, bool>> filter = null,

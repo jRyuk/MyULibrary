@@ -1,0 +1,24 @@
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Title</label>
+      <input [(ngModel)]="book.Title" type="text" class="form-control" placeholder="Title book">
+     
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Author</label>
+      <input [(ngModel)] = "book.Author" type="text" class="form-control" id="exampleInputPassword1" placeholder="Author">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Genre</label>
+        <input [(ngModel)] = "book.Genre" type="text" class="form-control" id="exampleInputPassword1" placeholder="Genre">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Quantity</label>
+        <input [(ngModel)] = "book.Published" min="1" type="number" class="form-control" id="exampleInputPassword1" placeholder="Quantity">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Release date</label>
+        <input [(ngModel)] = "book.Published" type="date" class="form-control" id="exampleInputPassword1" placeholder="Release date">
+    </div>
+    <br/>
+    <button (click)="Guardar()" type="submit" class="btn btn-primary">Submit</button>
