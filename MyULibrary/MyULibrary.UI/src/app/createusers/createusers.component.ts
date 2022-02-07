@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppSettings } from '../AppSettings';
 
 @Component({
@@ -9,7 +10,7 @@ import { AppSettings } from '../AppSettings';
 })
 export class CreateusersComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private route:Router) { }
 
   ngOnInit(): void {
   }
@@ -26,9 +27,15 @@ export class CreateusersComponent implements OnInit {
 
   Guardar()
   {
-    this.http.post<any>(`${AppSettings.API_ENDPOINT}/${AppSettings.user}`,this.user).subscribe(data =>
+    const head = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem("token")}`, 
+      
+    })
+
+    this.http.post<any>(`${AppSettings.API_ENDPOINT}/${AppSettings.user}`,this.user, {headers:head}).subscribe(data =>
       {
-       
+       this.route.navigate(['/users']);
       });
   }
 

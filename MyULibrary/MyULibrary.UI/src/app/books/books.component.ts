@@ -38,6 +38,7 @@ export class BooksComponent implements OnInit {
     .subscribe(data =>
       {
         this.LoadBooks();
+        alert("Your booking was success!");
       });
     }
 

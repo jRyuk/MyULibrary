@@ -32,7 +32,7 @@ namespace MyULibrary.API.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        
+        [Authorize(Roles = "Librarian")]
         public async Task<ActionResult<User>> PostAccount(User user)
         {
             user.UserName = user.Email;
@@ -43,7 +43,7 @@ namespace MyULibrary.API.Controllers
                await  _userManager.AddToRoleAsync(user, user.Role);
             }
 
-            return CreatedAtAction("GetBooks", new { id = user.Id }, user);
+            return Ok(result);
         }
 
 
@@ -58,11 +58,11 @@ namespace MyULibrary.API.Controllers
                 return NotFound();
             }
 
-            return Ok(users.Select(c=> new {
+            return Ok(users.Select( c=> new {
                 c.Email,
                 c.FirstName,
                 c.LastName,
-                Role= "",
+                Role=  _userManager.GetRolesAsync(c).Result,
 
             }));
         }
