@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AppSettings } from '../AppSettings';
 
@@ -16,7 +16,13 @@ export class CreateBooksComponent implements OnInit {
 
   Guardar()
   {
-    this.http.post<any>(`${AppSettings.API_ENDPOINT}/${AppSettings.getBooks}`,this.book).subscribe(data =>
+    const head = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem("token")}`, 
+      
+    })
+
+    this.http.post<any>(`${AppSettings.API_ENDPOINT}/${AppSettings.postBooks}`,this.book, {headers:head}).subscribe(data =>
      {
       
      });

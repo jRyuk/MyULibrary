@@ -1,0 +1,15 @@
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary.BAL\bin\Release\netcoreapp3.1\MyULibrary.BAL.deps.json
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary.BAL\bin\Release\netcoreapp3.1\MyULibrary.BAL.dll
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary.BAL\bin\Release\netcoreapp3.1\MyULibrary.BAL.pdb
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary.BAL\bin\Release\netcoreapp3.1\MyULibrary.DAL.dll
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary.BAL\bin\Release\netcoreapp3.1\MyULibrary.Shared.dll
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary.BAL\bin\Release\netcoreapp3.1\MyULibrary.DAL.pdb
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary.BAL\bin\Release\netcoreapp3.1\MyULibrary.Shared.pdb
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary.BAL\obj\Release\netcoreapp3.1\MyULibrary.BAL.csproj.AssemblyReference.cache
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary.BAL\obj\Release\netcoreapp3.1\MyULibrary.BAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary.BAL\obj\Release\netcoreapp3.1\MyULibrary.BAL.AssemblyInfoInputs.cache
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary.BAL\obj\Release\netcoreapp3.1\MyULibrary.BAL.AssemblyInfo.cs
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary.BAL\obj\Release\netcoreapp3.1\MyULibrary.BAL.csproj.CoreCompileInputs.cache
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary.BAL\obj\Release\netcoreapp3.1\MyULibrary.BAL.csproj.CopyComplete
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary.BAL\obj\Release\netcoreapp3.1\MyULibrary.BAL.dll
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\MyULibrary.BAL\obj\Release\netcoreapp3.1\MyULibrary.BAL.pdb

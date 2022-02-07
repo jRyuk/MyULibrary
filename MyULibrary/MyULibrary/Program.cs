@@ -21,7 +21,7 @@ namespace MyULibrary
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>()
-                    .UseUrls("http://localhost:4000/");
+                    .UseUrls("http://localhost:4000/", "https://myulibrary.azurewebsites.net/");
                 });
     }
 }

@@ -1,0 +1,13 @@
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Models\bin\Release\netcoreapp3.1\MyULibrary.DAL.deps.json
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Models\bin\Release\netcoreapp3.1\MyULibrary.DAL.dll
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Models\bin\Release\netcoreapp3.1\MyULibrary.DAL.pdb
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Models\bin\Release\netcoreapp3.1\MyULibrary.Shared.dll
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Models\bin\Release\netcoreapp3.1\MyULibrary.Shared.pdb
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Models\obj\Release\netcoreapp3.1\MyULibrary.DAL.csproj.AssemblyReference.cache
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Models\obj\Release\netcoreapp3.1\MyULibrary.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Models\obj\Release\netcoreapp3.1\MyULibrary.DAL.AssemblyInfoInputs.cache
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Models\obj\Release\netcoreapp3.1\MyULibrary.DAL.AssemblyInfo.cs
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Models\obj\Release\netcoreapp3.1\MyULibrary.DAL.csproj.CoreCompileInputs.cache
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Models\obj\Release\netcoreapp3.1\MyULibrary.DAL.csproj.CopyComplete
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Models\obj\Release\netcoreapp3.1\MyULibrary.DAL.dll
+C:\Users\jacob\OneDrive\Documents\MyULibrary\MyULibrary\Models\obj\Release\netcoreapp3.1\MyULibrary.DAL.pdb
