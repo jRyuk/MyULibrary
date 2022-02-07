@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppSettings } from '../AppSettings';
 
 @Component({
@@ -9,7 +10,7 @@ import { AppSettings } from '../AppSettings';
 })
 export class CreateBooksComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private route:Router) { }
 
   ngOnInit(): void {
   }
@@ -24,7 +25,7 @@ export class CreateBooksComponent implements OnInit {
 
     this.http.post<any>(`${AppSettings.API_ENDPOINT}/${AppSettings.postBooks}`,this.book, {headers:head}).subscribe(data =>
      {
-      
+        this.route.navigate(['/books']);
      });
 
   }
