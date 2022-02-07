@@ -11,6 +11,7 @@ import { CreateusersComponent } from './createusers/createusers.component';
 import { LoginComponent } from './login/login.component';
 import { MyBooksComponent } from './my-books/my-books.component';
 import { UsersComponent } from './users/users.component';
+import { UserBooksComponent } from './user-books/user-books.component';
 
 const routes: Routes = [
   {
@@ -32,12 +33,16 @@ const routes: Routes = [
   {
     path : "mybooks",
     component : MyBooksComponent
+  },
+  {
+    path : "userbooks",
+    component : UserBooksComponent
   }
 ];
 
 @NgModule({
   imports:      [ BrowserModule, RouterModule.forRoot(routes),HttpClientModule,FormsModule ],
-  declarations: [ CreateusersComponent, AppComponent, CreateBooksComponent, BooksComponent, CreateusersComponent, LoginComponent, MyBooksComponent, UsersComponent ],
+  declarations: [ CreateusersComponent, AppComponent, CreateBooksComponent, BooksComponent, CreateusersComponent, LoginComponent, MyBooksComponent, UsersComponent, UserBooksComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

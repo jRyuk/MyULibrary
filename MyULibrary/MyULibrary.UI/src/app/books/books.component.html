@@ -1,11 +1,16 @@
-<div>
+<div >
     <div >
       <p>
-        <a routerLink="/mybooks">My requested books!</a> | 
-        <a routerLink="/bookrequested">View books requested</a> |
-        <a routerLink="/users">Users</a>
+        <a routerLink="/mybooks">My requested books! </a>
+        <a [hidden]="isLibrarian == false" routerLink="/userbooks"> | View books requested </a>
+        <a [hidden]="isLibrarian == false" routerLink="/users"> | Users</a>
       </p>
 
+    </div>
+    <div>
+      <label>Filter: </label>
+      <input class="form-control" />
+      <br/>
     </div>
     <div *ngFor="let book of books" class="card" style="width: 18rem;">
         <div class="card-body">

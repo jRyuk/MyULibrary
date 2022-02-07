@@ -1,3 +1,4 @@
+<a routerLink="/books">Back</a> | 
 <a routerLink="/createusers">Crear nuevo usuerio</a>
 <table class="table">
     <thead>
@@ -16,4 +17,20 @@
             </th>
         </tr>
     </thead>
+    <tbody>
+        <tr *ngFor="let user of Users">
+            <td>
+                {{user.firstName}}
+            </td>
+            <td>
+                {{user.lastName}}
+            </td>
+            <td>
+                {{user.email}}
+            </td>
+            <td>
+                {{user.role}}
+            </td>
+        </tr>
+    </tbody>
 </table>

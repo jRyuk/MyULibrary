@@ -5,4 +5,7 @@ export class AppSettings {
    public static user = "account/"
    public static login = "account/authenticate"
    public static requestbook = "books/requestbook";
+   public static getAllrequestedtbook = "books/getAllrequestedtbook";
+   public static users ="account/getusers"
+   public static endbooking = "books/endbooking";
 }

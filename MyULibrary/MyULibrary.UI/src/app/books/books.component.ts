@@ -12,8 +12,12 @@ import { Router } from '@angular/router';
 export class BooksComponent implements OnInit {
 
   books: any;
+  isLibrarian = false;
 
-  constructor(private http:HttpClient,private route:Router) { }
+  constructor(private http:HttpClient,private route:Router) { 
+
+    this.isLibrarian = localStorage.getItem("role") == "Librarian";
+  }
 
   ngOnInit(): void 
   {

@@ -1,0 +1,39 @@
+<a routerLink="/books">Back</a>  
+<table class="table">
+    <thead>
+        <th>
+            Book name 
+        </th>
+        <th>
+            | User first name
+        </th>
+        <th>
+            | User last name
+        </th>
+        <th>
+            | Email
+        </th>
+        <th>
+            | End booking
+        </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td>
+                {{book.book.title}}
+            </td>
+            <td>
+                {{book.user.firstName}}
+            </td>
+            <td>
+                {{book.user.lastName}}
+            </td>
+            <td>
+                {{book.user.email}}
+            </td>
+            <td>
+                <button (click)="EndBooking(book.id)" class="btn btn-danger">End request</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

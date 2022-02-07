@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MyULibrary.BAL.Declarations;
 using MyULibrary.BAL.Implementations;
 using MyULibrary.DAL.Models;
 using System;
@@ -17,17 +19,20 @@ namespace MyULibrary.API.Controllers
         UserManager<User> _userManager;
         RoleManager<IdentityRole> _roleManager;
         IUserService _userService;
-        public AccountController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IUserService userService)
+        IUsersRepository _usersRepository;
+        public AccountController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IUserService userService, IUsersRepository usersRepository)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _userService = userService;
+            _usersRepository = usersRepository;
         }
 
         // POST: api/Account
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
+        
         public async Task<ActionResult<User>> PostAccount(User user)
         {
             user.UserName = user.Email;
@@ -40,6 +45,29 @@ namespace MyULibrary.API.Controllers
 
             return CreatedAtAction("GetBooks", new { id = user.Id }, user);
         }
+
+
+        [HttpGet("getusers")]
+        [Authorize(Roles = "Librarian")]
+        public async Task<ActionResult<User>> GetUsers()
+        {
+            var users = await _usersRepository.Get();
+
+            if (users == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(users.Select(c=> new {
+                c.Email,
+                c.FirstName,
+                c.LastName,
+                Role= "",
+
+            }));
+        }
+
+      
 
 
         [HttpPost("authenticate")]

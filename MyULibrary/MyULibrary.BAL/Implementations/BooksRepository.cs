@@ -18,8 +18,29 @@ namespace MyULibrary.BAL.Implementations
 
         }
 
+        public async Task EndBooking(int id)
+        {
+            var booking = await context.BookRequest.Include(c=> c.Book).FirstOrDefaultAsync(c => c.Id == id);
+            if (booking != null)
+            {
+                var book = await context.Books.FirstOrDefaultAsync(c => c.Id == booking.Book.Id);
+                context.BookRequest.Remove(booking);
+                await context.SaveChangesAsync();
+                book.Quantity += 1;
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public async Task<IQueryable<BookRequest>> GetAllBookRequested()
+        {
+            return context.BookRequest.Include(c => c.User)
+             .Include(c => c.Book).Select(c => c);
+        }
+
         public async Task<IQueryable<Books>> GetMyBooks(string userId)
         {
+
+            
 
             var mybooks = context.BookRequest.Include(c => c.User)
             .Include(c => c.Book).Where(c => c.User.Email == userId);

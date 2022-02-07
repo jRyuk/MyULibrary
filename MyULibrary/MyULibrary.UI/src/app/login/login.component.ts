@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
           ;
           localStorage.setItem ('token', data.token);
           localStorage.setItem ('email', data.email);
+          localStorage.setItem ('role', data.roles[0]);
           window.location.reload();
         }
       });

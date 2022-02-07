@@ -59,6 +59,7 @@ namespace MyULibrary
             services.AddControllers();
             services.Configure<JWT>(_configuration.GetSection("JWT"));
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUsersRepository, UserRepository>();
 
             //Adding Athentication - JWT
             services.AddAuthentication(options =>
@@ -82,6 +83,12 @@ namespace MyULibrary
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Key"]))
                     };
                 });
+
+            services.AddAuthorization(o =>
+            {
+                o.AddPolicy("FirstStepCompleted", policy => policy.RequireClaim("FirstStepCompleted"));
+                o.AddPolicy("Authorized", policy => policy.RequireClaim("Authorized"));
+            });
 
             services.AddControllersWithViews().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);

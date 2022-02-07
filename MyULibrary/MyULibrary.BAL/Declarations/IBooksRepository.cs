@@ -14,5 +14,9 @@ namespace MyULibrary.BAL.Declarations
         Task<Books> RequestBook(BookRequestViewModel books);
 
         Task<IQueryable<Books>> GetMyBooks(string userId);
+
+        Task<IQueryable<BookRequest>> GetAllBookRequested();
+
+        Task EndBooking(int id);
     }
 }

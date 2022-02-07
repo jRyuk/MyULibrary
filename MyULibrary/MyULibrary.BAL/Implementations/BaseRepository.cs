@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MyULibrary.BAL.Declarations
 {
-    public abstract class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : BaseModel
+    public abstract class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         internal ApplicationDbContext context;
         internal DbSet<TEntity> dbSet;

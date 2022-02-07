@@ -126,5 +126,28 @@ namespace MyULibrary.API.Controllers
             var userinfo = User.FindFirstValue(ClaimTypes.NameIdentifier);
             return Ok(await _booksRepository.GetMyBooks(userinfo));
         }
+
+        [HttpGet("getAllrequestedtbook")]
+        [Authorize(Roles = "Librarian")]
+        public async Task<ActionResult<User>> GetAllrequestedtbook()
+        {
+            var requests = await _booksRepository.GetAllBookRequested();
+
+            if (requests == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(requests);
+        }
+
+        [HttpGet("endbooking/{id}")]
+        [Authorize(Roles = "Librarian")]
+        public async Task<ActionResult<User>> EndBooking(int id)
+        {
+           await  _booksRepository.EndBooking(id);
+
+            return Ok();
+        }
     }
 }
