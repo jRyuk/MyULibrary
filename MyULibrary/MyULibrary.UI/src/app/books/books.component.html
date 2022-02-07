@@ -9,7 +9,7 @@
     </div>
     <div>
       <label>Filter: </label>
-      <input class="form-control" />
+      <input [ngModel]="filterText" (ngModelChange)="filterBooks($event)" class="form-control" />
       <br/>
     </div>
     <div *ngFor="let book of books" class="card" style="width: 18rem;">

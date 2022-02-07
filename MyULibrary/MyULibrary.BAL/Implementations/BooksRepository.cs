@@ -31,6 +31,16 @@ namespace MyULibrary.BAL.Implementations
             }
         }
 
+        public async Task<IEnumerable<Books>> Get(string filter)
+        {
+            if (string.IsNullOrEmpty(filter))
+                return await Get();
+
+            return context.Books.Where(c => c.Title.ToLower().Contains(filter.ToLower())
+            || c.Genre.ToLower().Contains(filter.ToLower())
+            || c.Author.ToLower().Contains(filter.ToLower()));
+        }
+
         public async Task<IQueryable<BookRequest>> GetAllBookRequested()
         {
             return context.BookRequest.Include(c => c.User)

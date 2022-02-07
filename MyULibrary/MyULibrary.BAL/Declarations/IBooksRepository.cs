@@ -18,5 +18,7 @@ namespace MyULibrary.BAL.Declarations
         Task<IQueryable<BookRequest>> GetAllBookRequested();
 
         Task EndBooking(int id);
+
+        Task<IEnumerable<Books>> Get(string filter);
     }
 }

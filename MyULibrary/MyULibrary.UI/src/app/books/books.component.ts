@@ -13,6 +13,7 @@ export class BooksComponent implements OnInit {
 
   books: any;
   isLibrarian = false;
+  filterText = "";
 
   constructor(private http:HttpClient,private route:Router) { 
 
@@ -47,7 +48,7 @@ export class BooksComponent implements OnInit {
       
     })
 
-    this.http.get(`${AppSettings.API_ENDPOINT}/${AppSettings.getBooks}`
+    this.http.get(`${AppSettings.API_ENDPOINT}/${AppSettings.getBooks}?filter=${this.filterText}`
     , {observe: 'response', headers:head}).
     subscribe(
       (response)=>
@@ -62,4 +63,10 @@ export class BooksComponent implements OnInit {
         }
     );
   }
+
+  filterBooks(filter:any){
+    this.filterText = filter;
+    this.LoadBooks();
+  }
+
 }

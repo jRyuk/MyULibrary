@@ -23,15 +23,15 @@ namespace MyULibrary.API.Controllers
 
         public BooksController(ApplicationDbContext context, IBooksRepository booksRepository)
         {
-            
+
             _booksRepository = booksRepository;
         }
 
         // GET: api/Books
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Books>>> GetBooks()
+        public async Task<ActionResult<IEnumerable<Books>>> GetBooks(string filter)
         {
-            return Ok(await _booksRepository.Get());
+            return Ok(await _booksRepository.Get(filter));
         }
 
         // GET: api/Books/5
@@ -84,7 +84,7 @@ namespace MyULibrary.API.Controllers
         [HttpPost]
         public async Task<ActionResult<Books>> PostBooks(Books books)
         {
-           await _booksRepository.Insert(books);
+            await _booksRepository.Insert(books);
 
             return CreatedAtAction("GetBooks", new { id = books.Id }, books);
         }
@@ -99,7 +99,7 @@ namespace MyULibrary.API.Controllers
                 return NotFound();
             }
 
-           await _booksRepository.Delete(books);
+            await _booksRepository.Delete(books);
 
             return books;
         }
@@ -145,7 +145,7 @@ namespace MyULibrary.API.Controllers
         [Authorize(Roles = "Librarian")]
         public async Task<ActionResult<User>> EndBooking(int id)
         {
-           await  _booksRepository.EndBooking(id);
+            await _booksRepository.EndBooking(id);
 
             return Ok();
         }
